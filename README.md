@@ -6,10 +6,5 @@ This repo is being used for Class-Works & Assignments (From Ostad) .
 # Topic :
 
 
-# Assignment-0
-# Project : 
-
-
 Check Branches for Class-Works and Assignments .
 (example : class-0 ; class-1 ; class-2 ;)
-(example : Assignment-0 ; Assignment-1 ; Assignment-2 ;)
