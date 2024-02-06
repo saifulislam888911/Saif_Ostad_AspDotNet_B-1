@@ -6,6 +6,11 @@ namespace Calculator
         {
             InitializeComponent();
         }
+
+        public int num1;
+        public int num2;
+        public string operation;
+        public int result;
       
         private void btn_For_Num1_Click(object sender, EventArgs e)
         {
@@ -69,7 +74,7 @@ namespace Calculator
 
         private void btn_Clear_Click(object sender, EventArgs e)
         {
-
+            txt_InputOutput.Clear();
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
@@ -79,32 +84,95 @@ namespace Calculator
 
         private void btn_Div_Click(object sender, EventArgs e)
         {
-            txt_InputOutput.Text = txt_InputOutput.Text + "/";
+            //txt_InputOutput.Text = txt_InputOutput.Text + "/";
+
+            operation = "/";
+
+            //num1 = int.Parse(txt_InputOutput.Text);
+            num1 = Convert.ToInt16(txt_InputOutput.Text);
+
+            //txt_InputOutput.Text = "";
+            txt_InputOutput.Clear();
         }     
 
         private void btn_Mul_Click(object sender, EventArgs e)
         {
-            txt_InputOutput.Text = txt_InputOutput.Text + "*";
+            //txt_InputOutput.Text = txt_InputOutput.Text + "*";
+
+            operation = "*";
+
+            //num1 = int.Parse(txt_InputOutput.Text);
+            num1 = Convert.ToInt16(txt_InputOutput.Text);
+
+            //txt_InputOutput.Text = "";
+            txt_InputOutput.Clear();
         }
 
         private void btn_Sub_Click(object sender, EventArgs e)
         {
-            txt_InputOutput.Text = txt_InputOutput.Text + "-";
+            //txt_InputOutput.Text = txt_InputOutput.Text + "-";
+            
+            operation = "-";
+
+            //num1 = int.Parse(txt_InputOutput.Text);
+            num1 = Convert.ToInt16(txt_InputOutput.Text);
+
+            //txt_InputOutput.Text = "";
+            txt_InputOutput.Clear();
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            txt_InputOutput.Text = txt_InputOutput.Text + "+";
+            //txt_InputOutput.Text = txt_InputOutput.Text + "+";
+
+            operation = "+";
+
+            //num1 = int.Parse(txt_InputOutput.Text);
+            num1 = Convert.ToInt16(txt_InputOutput.Text);
+
+            //txt_InputOutput.Text = "";
+            txt_InputOutput.Clear();
         }
 
         private void btn_Percent_Click(object sender, EventArgs e)
         {
-            txt_InputOutput.Text = txt_InputOutput.Text + "%";
+            //txt_InputOutput.Text = txt_InputOutput.Text + "%";
+
+            operation = "%";
+
+            //num1 = int.Parse(txt_InputOutput.Text);
+            num1 = Convert.ToInt16(txt_InputOutput.Text);
+
+            //txt_InputOutput.Text = "";
+            txt_InputOutput.Clear();
         }
 
         private void btn_For_Result_Click(object sender, EventArgs e)
         {
+            num2 = Convert.ToInt16(txt_InputOutput.Text);
 
+            if(operation == "+") 
+            {
+                result = num1 + num2;
+            }
+            if (operation == "-")
+            {
+                result = num1 - num2;
+            }
+            if (operation == "*")
+            {
+                result = num1 * num2;
+            }
+            if (operation == "/")
+            {
+                result = num1 / num2;
+            }
+            if (operation == "%")
+            {
+                result = num1 % num2;
+            }
+
+            txt_InputOutput.Text = result.ToString();
         }
     }
 }
