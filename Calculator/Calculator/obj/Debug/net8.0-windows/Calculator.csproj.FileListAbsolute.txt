@@ -1,0 +1,17 @@
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\bin\Debug\net8.0-windows\Calculator.exe
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\bin\Debug\net8.0-windows\Calculator.deps.json
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\bin\Debug\net8.0-windows\Calculator.runtimeconfig.json
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\bin\Debug\net8.0-windows\Calculator.dll
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\bin\Debug\net8.0-windows\Calculator.pdb
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\obj\Debug\net8.0-windows\Calculator.Calculator_page_1.resources
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\obj\Debug\net8.0-windows\Calculator.csproj.GenerateResource.cache
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\obj\Debug\net8.0-windows\Calculator.GeneratedMSBuildEditorConfig.editorconfig
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\obj\Debug\net8.0-windows\Calculator.AssemblyInfoInputs.cache
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\obj\Debug\net8.0-windows\Calculator.AssemblyInfo.cs
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\obj\Debug\net8.0-windows\Calculator.csproj.CoreCompileInputs.cache
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\obj\Debug\net8.0-windows\Calculator.sourcelink.json
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\obj\Debug\net8.0-windows\Calculator.dll
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\obj\Debug\net8.0-windows\refint\Calculator.dll
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\obj\Debug\net8.0-windows\Calculator.pdb
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\obj\Debug\net8.0-windows\Calculator.genruntimeconfig.cache
+D:\HP\PROGRESSING\Ostad\ASP.NET Core Batch 1\MY WORKS - GITHUB\Saif_Ostad_AspDotNet_B-1\Calculator\Calculator\obj\Debug\net8.0-windows\ref\Calculator.dll
