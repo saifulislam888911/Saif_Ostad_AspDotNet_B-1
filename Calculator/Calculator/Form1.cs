@@ -7,6 +7,8 @@ namespace Calculator
         private string currentOperation;
         private double result;
 
+        private int flag_OperationBtn = 0;
+
         public Calculator_page_1()
         {
             InitializeComponent();
@@ -74,6 +76,7 @@ namespace Calculator
 
         private void btn_Clear_Click(object sender, EventArgs e)
         {
+            //txt_InputOutput.Text = "";
             txt_InputOutput.Clear();
         }
 
@@ -87,66 +90,72 @@ namespace Calculator
 
         private void btn_Div_Click(object sender, EventArgs e)
         {
-            //txt_InputOutput.Text = txt_InputOutput.Text + "/";
-
             currentOperation = "/";
 
-            //firstOperand = Convert.ToInt16(txt_InputOutput.Text);
-            firstOperand = double.Parse(txt_InputOutput.Text);
-            
+            //txt_InputOutput.Text = txt_InputOutput.Text + "/";
+            txt_InputOutput.Text = txt_InputOutput.Text + currentOperation;
 
-            //txt_InputOutput.Text = "";
-            txt_InputOutput.Clear();
+            //firstOperand = Convert.ToInt16(txt_InputOutput.Text);
+            firstOperand = double.Parse(txt_InputOutput.Text.Remove(txt_InputOutput.Text.Length-1));
         }     
 
         private void btn_Mul_Click(object sender, EventArgs e)
         {
-            //txt_InputOutput.Text = txt_InputOutput.Text + "*";
+            firstOperand = double.Parse(txt_InputOutput.Text);
 
             currentOperation = "*";
 
-            firstOperand = double.Parse(txt_InputOutput.Text);
-
-            txt_InputOutput.Clear();
+            txt_InputOutput.Text = txt_InputOutput.Text + currentOperation;    
         }
 
         private void btn_Sub_Click(object sender, EventArgs e)
         {
-            //txt_InputOutput.Text = txt_InputOutput.Text + "-";
+            firstOperand = double.Parse(txt_InputOutput.Text);
             
             currentOperation = "-";
 
-            firstOperand = double.Parse(txt_InputOutput.Text);
-
-            txt_InputOutput.Clear();
+            txt_InputOutput.Text = txt_InputOutput.Text + currentOperation;
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            //txt_InputOutput.Text = txt_InputOutput.Text + "+";
-
-            currentOperation = "+";
+            //Btn_Validation();
 
             firstOperand = double.Parse(txt_InputOutput.Text);
 
-            txt_InputOutput.Clear();
+            currentOperation = "+";
+
+            txt_InputOutput.Text = txt_InputOutput.Text + currentOperation;
+
+            //if (string.IsNullOrEmpty(Convert.ToString(secondOperand))){}          
         }
 
         private void btn_Percent_Click(object sender, EventArgs e)
         {
-            //txt_InputOutput.Text = txt_InputOutput.Text + "%";
+            firstOperand = double.Parse(txt_InputOutput.Text);
 
             currentOperation = "%";
 
-            firstOperand = double.Parse(txt_InputOutput.Text);
-
-            txt_InputOutput.Clear();
+            txt_InputOutput.Text = txt_InputOutput.Text + currentOperation;
         }
 
-        private void btn_For_Result_Click(object sender, EventArgs e)
+        private void Btn_Validation()
+        {          
+            if(flag_OperationBtn == 1)
+            {
+                Calculation();
+
+                flag_OperationBtn = 0;
+            }
+
+            flag_OperationBtn++;
+        }
+
+        private void Calculation()
         {
+            int charPos = txt_InputOutput.Text.IndexOf(currentOperation);
             //secondOperand = Convert.ToInt16(txt_InputOutput.Text);
-            secondOperand = double.Parse(txt_InputOutput.Text);
+            secondOperand = double.Parse(txt_InputOutput.Text.Substring(charPos + 1));
 
             switch (currentOperation)
             {
@@ -159,7 +168,7 @@ namespace Calculator
                     break;
 
                 case "*":
-                    result = firstOperand * secondOperand;                   
+                    result = firstOperand * secondOperand;
                     break;
 
                 case "/":
@@ -179,6 +188,11 @@ namespace Calculator
             }
 
             txt_InputOutput.Text = result.ToString();
+        }
+
+        private void btn_For_Result_Click(object sender, EventArgs e)
+        {
+           Calculation();  
         }
     }
 }
