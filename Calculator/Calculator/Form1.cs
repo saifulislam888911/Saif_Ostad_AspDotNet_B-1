@@ -2,16 +2,16 @@ namespace Calculator
 {
     public partial class Calculator_page_1 : Form
     {
+        private double firstOperand;
+        private double secondOperand;
+        private string currentOperation;
+        private double result;
+
         public Calculator_page_1()
         {
             InitializeComponent();
         }
-
-        public int num1;
-        public int num2;
-        public string operation;
-        public int result;
-      
+              
         private void btn_For_Num1_Click(object sender, EventArgs e)
         {
             txt_InputOutput.Text = txt_InputOutput.Text + "1";
@@ -79,17 +79,21 @@ namespace Calculator
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-
+            if (txt_InputOutput.Text.Length > 0)
+            {
+                txt_InputOutput.Text = txt_InputOutput.Text.Remove(txt_InputOutput.Text.Length - 1);
+            }
         }
 
         private void btn_Div_Click(object sender, EventArgs e)
         {
             //txt_InputOutput.Text = txt_InputOutput.Text + "/";
 
-            operation = "/";
+            currentOperation = "/";
 
-            //num1 = int.Parse(txt_InputOutput.Text);
-            num1 = Convert.ToInt16(txt_InputOutput.Text);
+            //firstOperand = Convert.ToInt16(txt_InputOutput.Text);
+            firstOperand = double.Parse(txt_InputOutput.Text);
+            
 
             //txt_InputOutput.Text = "";
             txt_InputOutput.Clear();
@@ -99,12 +103,10 @@ namespace Calculator
         {
             //txt_InputOutput.Text = txt_InputOutput.Text + "*";
 
-            operation = "*";
+            currentOperation = "*";
 
-            //num1 = int.Parse(txt_InputOutput.Text);
-            num1 = Convert.ToInt16(txt_InputOutput.Text);
+            firstOperand = double.Parse(txt_InputOutput.Text);
 
-            //txt_InputOutput.Text = "";
             txt_InputOutput.Clear();
         }
 
@@ -112,12 +114,10 @@ namespace Calculator
         {
             //txt_InputOutput.Text = txt_InputOutput.Text + "-";
             
-            operation = "-";
+            currentOperation = "-";
 
-            //num1 = int.Parse(txt_InputOutput.Text);
-            num1 = Convert.ToInt16(txt_InputOutput.Text);
+            firstOperand = double.Parse(txt_InputOutput.Text);
 
-            //txt_InputOutput.Text = "";
             txt_InputOutput.Clear();
         }
 
@@ -125,12 +125,10 @@ namespace Calculator
         {
             //txt_InputOutput.Text = txt_InputOutput.Text + "+";
 
-            operation = "+";
+            currentOperation = "+";
 
-            //num1 = int.Parse(txt_InputOutput.Text);
-            num1 = Convert.ToInt16(txt_InputOutput.Text);
+            firstOperand = double.Parse(txt_InputOutput.Text);
 
-            //txt_InputOutput.Text = "";
             txt_InputOutput.Clear();
         }
 
@@ -138,38 +136,46 @@ namespace Calculator
         {
             //txt_InputOutput.Text = txt_InputOutput.Text + "%";
 
-            operation = "%";
+            currentOperation = "%";
 
-            //num1 = int.Parse(txt_InputOutput.Text);
-            num1 = Convert.ToInt16(txt_InputOutput.Text);
+            firstOperand = double.Parse(txt_InputOutput.Text);
 
-            //txt_InputOutput.Text = "";
             txt_InputOutput.Clear();
         }
 
         private void btn_For_Result_Click(object sender, EventArgs e)
         {
-            num2 = Convert.ToInt16(txt_InputOutput.Text);
+            //secondOperand = Convert.ToInt16(txt_InputOutput.Text);
+            secondOperand = double.Parse(txt_InputOutput.Text);
 
-            if(operation == "+") 
+            switch (currentOperation)
             {
-                result = num1 + num2;
-            }
-            if (operation == "-")
-            {
-                result = num1 - num2;
-            }
-            if (operation == "*")
-            {
-                result = num1 * num2;
-            }
-            if (operation == "/")
-            {
-                result = num1 / num2;
-            }
-            if (operation == "%")
-            {
-                result = num1 % num2;
+                case "+":
+                    result = firstOperand + secondOperand;
+                    break;
+
+                case "-":
+                    result = firstOperand - secondOperand;
+                    break;
+
+                case "*":
+                    result = firstOperand * secondOperand;                   
+                    break;
+
+                case "/":
+                    if (secondOperand != 0)
+                    {
+                        result = firstOperand / secondOperand;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cannot divide by zero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
+
+                case "%":
+                    result = firstOperand % secondOperand;
+                    break;
             }
 
             txt_InputOutput.Text = result.ToString();
