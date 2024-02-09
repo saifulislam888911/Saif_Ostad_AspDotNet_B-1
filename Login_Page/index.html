@@ -4,22 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-
     <link rel="stylesheet" href="style/form_page_style.css">
 </head>
-
 <body>
     <div class="login-panel">
-        <form action="" class="login-form">
-            <h2>Log in</h2>
-
-            <input type="email" name="" id="" placeholder="Your Email">
-            <input type="password" name="" id="" placeholder="Enter Password">
+        <form id="loginForm" class="login-form">
+            <h2>Login</h2>
+            
+            <input type="email" id="email" placeholder="Your Email">
+            <span id="emailError" class="error-message"></span>
         
+            <input type="password" id="password" placeholder="Enter Password">
+            <span id="passwordError" class="error-message"></span>
+          
             <button type="submit">Login</button>
-
-            <span>New User <a href="signup_page.html">Sign up</a></span>
+            
+            <span>New User? <a href="signup_page.html">Sign up</a></span>     
         </form>
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            clearErrorMessages();
+
+            if (!isValidEmail(email)) {
+                emailError.textContent = 'Please enter a valid email address.';
+                return;
+            }
+
+            if (!isValidPassword(password)) {
+                passwordError.textContent = 'Please enter a password.';
+                return;
+            }
+
+            alert('Login successful!');
+        });
+
+        function isValidEmail(email) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return email.trim() !== '' && emailRegex.test(email.trim());
+        }
+
+        function isValidPassword(password) {
+            return password.trim() !== '';
+        }
+
+        function showError(elementId, message) {
+            document.getElementById(elementId).textContent = message;
+        }
+
+        function clearErrorMessages() {
+            var errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(function(element) {
+                element.textContent = '';
+            });
+        }
+    </script>
 </body>
 </html>

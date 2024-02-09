@@ -3,40 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup Page</title>
-
+    <title>Sign Up</title>
     <link rel="stylesheet" href="style/form_page_style.css">
 </head>
-
 <body>
     <div class="signup-panel">
-        <form action="" class="signup-form">
-            <h2>Sign up</h2>
+        <form id="signupForm" class="signup-form">
+            <h2>Sign Up</h2>
+        
+            <input type="text" id="firstName" placeholder="First Name">
+            <span id="firstNameError" class="error-message"></span>
+        
+            <input type="text" id="lastName" placeholder="Last Name">
+            <span id="lastNameError" class="error-message"></span>
+        
+            <input type="email" id="email" placeholder="Email">
+            <span id="emailError" class="error-message"></span>
+        
+            <label for="dob">Date of Birth:
+            <input type="date" id="dob">
+            <span id="dobError" class="error-message"></span>
+            </label>
             
-            <input type="text" name="" id="" placeholder="First Name">
-            <input type="text" name="" id="" placeholder="Last Name">
-            <input type="email" name="" id="" placeholder="Email">
+            <label>Gender:
+            <input type="radio" id="male" name="gender">Male
+            <input type="radio" id="female" name="gender">Female
+            <span id="genderError" class="error-message"></span>
+            </label>
             
-            <div>
-                <label for="">Date of Birth :</label>
-                <input type="time" name="" id="">
-            </div>
-            
+            <input type="text" id="address" placeholder="Home Address">
+            <span id="addressError" class="error-message"></span>
+        
+            <input type="text" id="contactNumber" placeholder="Contact Number">
+            <span id="contactNumberError" class="error-message"></span>
+        
+            <input type="password" id="password" placeholder="Password">
+            <span id="passwordError" class="error-message"></span>
+        
+            <button type="submit">Sign Up</button>
 
-            <div>
-            <label for="">Gender :</label>
-            <input type="radio" name="" id="">Male
-            <input type="radio" name="" id="">Female
-            </div>
-            
-            <input type="text" name="" id="" placeholder="Home Address">
-            <input type="text" name="" id="" placeholder="Contact Number">
-            <input type="password" name="" id="" placeholder="Password">
-            
-            <button type="submit">Signup</button>
-
-            <span>Already Registered<a href="index.html">Log in</a> </span>
+            <span>Already Registered? <a href="index.html">Log in</a></span>
         </form>
     </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var email = document.getElementById('email').value;
+            var dob = document.getElementById('dob').value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var address = document.getElementById('address').value;
+            var contactNumber = document.getElementById('contactNumber').value;
+            var password = document.getElementById('password').value;
+
+            clearErrorMessages();
+
+            if (!isValidName(firstName)) {
+                showError('firstNameError', 'Please enter a valid first name.');
+                return;
+            }
+
+            if (!isValidName(lastName)) {
+                showError('lastNameError', 'Please enter a valid last name.');
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                showError('emailError', 'Please enter a valid email address.');
+                return;
+            }
+
+            if (!dob.trim()) {
+                showError('dobError', 'Please enter your date of birth.');
+                return;
+            }
+
+            if (!gender) {
+                showError('genderError', 'Please select your gender.');
+                return;
+            }
+
+            if (!address.trim()) {
+                showError('addressError', 'Please enter your home address.');
+                return;
+            }
+
+            if (!isValidContactNumber(contactNumber)) {
+                showError('contactNumberError', 'Please enter a valid contact number.');
+                return;
+            }
+
+            if (!isValidPassword(password)) {
+                showError('passwordError', 'Please enter a password.');
+                return;
+            }
+
+            alert('Sign Up successful!');
+        });
+
+        function isValidName(name) {
+            return /^[a-zA-Z]+$/.test(name.trim());
+        }
+
+        function isValidEmail(email) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return email.trim() !== '' && emailRegex.test(email.trim());
+        }
+
+        function isValidContactNumber(contactNumber) {
+            return /^\d{10}$/.test(contactNumber.trim());
+        }
+
+        function isValidPassword(password) {
+            return password.trim() !== '';
+        }
+
+        function showError(elementId, message) {
+            document.getElementById(elementId).textContent = message;
+        }
+
+        function clearErrorMessages() {
+            var errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(function(element) {
+                element.textContent = '';
+            });
+        }
+    </script>
 </body>
 </html>
