@@ -2,18 +2,26 @@ namespace Calculator
 {
     public partial class Calculator_page_1 : Form
     {
-        private double firstOperand;
-        private double secondOperand;
-        private string currentOperation;
-        private double result;
-
-        private int flag_OperationBtn = 0;
-
         public Calculator_page_1()
         {
             InitializeComponent();
         }
-              
+
+
+
+        /* ---------- Fields & Properties (start) ---------- */
+        private double firstOperand;
+        private double secondOperand;
+        private string? currentOperation;
+        private double result;
+
+        private int flag_OperationBtnCal = 0;
+        private int flag_operator2ndtime = 0;
+        /* ---------- Fields & Properties (end) ---------- */
+
+
+
+        /* ---------- Operand Number Assign (start) ---------- */   
         private void btn_For_Num1_Click(object sender, EventArgs e)
         {
             txt_InputOutput.Text = txt_InputOutput.Text + "1";
@@ -68,7 +76,78 @@ namespace Calculator
         {
             txt_InputOutput.Text = txt_InputOutput.Text + ".";
         }
+        /* ---------- Operand Number Assign (end) ---------- */
 
+
+
+        /* ---------- Operator Assign (start) ---------- */
+        private void btn_Div_Click(object sender, EventArgs e)
+        {
+            Btn_Validation();
+
+            firstOperand = double.Parse(txt_InputOutput.Text);
+
+            currentOperation = "/";
+
+            operator_Validation();
+
+            /*
+            //txt_InputOutput.Text = txt_InputOutput.Text + "/";
+            txt_InputOutput.Text = txt_InputOutput.Text + currentOperation;
+
+            //firstOperand = Convert.ToInt16(txt_InputOutput.Text);
+            firstOperand = double.Parse(txt_InputOutput.Text.Remove(txt_InputOutput.Text.Length-1));
+            */
+        }     
+
+        private void btn_Mul_Click(object sender, EventArgs e)
+        {
+            Btn_Validation();
+
+            firstOperand = double.Parse(txt_InputOutput.Text);
+
+            currentOperation = "*";
+
+            operator_Validation();
+        }
+
+        private void btn_Sub_Click(object sender, EventArgs e)
+        {
+            Btn_Validation();
+
+            firstOperand = double.Parse(txt_InputOutput.Text);
+
+            currentOperation = "-";
+
+            operator_Validation();
+        }
+
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            Btn_Validation();
+
+            firstOperand = double.Parse(txt_InputOutput.Text);
+
+            currentOperation = "+";
+
+            operator_Validation();
+        }
+
+        private void btn_Percent_Click(object sender, EventArgs e)
+        {
+            Btn_Validation();
+
+            firstOperand = double.Parse(txt_InputOutput.Text);
+
+            currentOperation = "%";
+
+            operator_Validation();
+        }
+        /* ---------- Operator Assign (end) ---------- */
+
+
+
+        /* ---------- Functional Button Assign (start) ---------- */
         private void btn_Power_Click(object sender, EventArgs e)
         {
 
@@ -76,6 +155,9 @@ namespace Calculator
 
         private void btn_Clear_Click(object sender, EventArgs e)
         {
+            resetOperandValue();
+            flag_operator2ndtime = 0;
+
             //txt_InputOutput.Text = "";
             txt_InputOutput.Clear();
         }
@@ -88,67 +170,70 @@ namespace Calculator
             }
         }
 
-        private void btn_Div_Click(object sender, EventArgs e)
+        private void btn_For_Result_Click(object sender, EventArgs e)
         {
-            currentOperation = "/";
-
-            //txt_InputOutput.Text = txt_InputOutput.Text + "/";
-            txt_InputOutput.Text = txt_InputOutput.Text + currentOperation;
-
-            //firstOperand = Convert.ToInt16(txt_InputOutput.Text);
-            firstOperand = double.Parse(txt_InputOutput.Text.Remove(txt_InputOutput.Text.Length-1));
-        }     
-
-        private void btn_Mul_Click(object sender, EventArgs e)
-        {
-            firstOperand = double.Parse(txt_InputOutput.Text);
-
-            currentOperation = "*";
-
-            txt_InputOutput.Text = txt_InputOutput.Text + currentOperation;    
-        }
-
-        private void btn_Sub_Click(object sender, EventArgs e)
-        {
-            firstOperand = double.Parse(txt_InputOutput.Text);
-            
-            currentOperation = "-";
-
-            txt_InputOutput.Text = txt_InputOutput.Text + currentOperation;
-        }
-
-        private void btn_Add_Click(object sender, EventArgs e)
-        {
-            //Btn_Validation();
-
-            firstOperand = double.Parse(txt_InputOutput.Text);
-
-            currentOperation = "+";
-
-            txt_InputOutput.Text = txt_InputOutput.Text + currentOperation;
-
-            //if (string.IsNullOrEmpty(Convert.ToString(secondOperand))){}          
-        }
-
-        private void btn_Percent_Click(object sender, EventArgs e)
-        {
-            firstOperand = double.Parse(txt_InputOutput.Text);
-
-            currentOperation = "%";
-
-            txt_InputOutput.Text = txt_InputOutput.Text + currentOperation;
-        }
-
-        private void Btn_Validation()
-        {          
-            if(flag_OperationBtn == 1)
+            try
             {
                 Calculation();
 
-                flag_OperationBtn = 0;
+                flag_operator2ndtime = 0;
             }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Invalid operand format. Please enter valid numbers.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); // Handle the format exception, which occurs if the operands are not valid doubles
 
-            flag_OperationBtn++;
+                Console.WriteLine($"Format Exception: {ex.Message}"); // Output exception message to console
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please Enter Operand numbers.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine($"Format Exception: {ex.Message}"); // Output exception message to console
+
+            }
+        }
+        /* ---------- Functional Button Assign (end) ---------- */
+
+
+
+        /* ---------- Validation Function (start) ---------- */
+        private void Btn_Validation()
+        {
+            if (flag_OperationBtnCal == 1)
+            {
+                Calculation();
+            }
+            else
+            {
+                flag_OperationBtnCal++;
+            }
+        }
+
+        private void operator_Validation()
+        {
+            if ((firstOperand != 0) && (flag_operator2ndtime == 0))
+            {
+                txt_InputOutput.Text = txt_InputOutput.Text + currentOperation;
+
+                flag_operator2ndtime++;
+            }
+            else
+            {
+                flag_operator2ndtime = 0;
+            }
+        }
+        /* ---------- Validation Function (end) ---------- */
+
+
+
+        /* ---------- Common Function (start) ---------- */
+        private void resetOperandValue()
+        {
+            firstOperand = 0;
+            secondOperand = 0;
+            currentOperation = null;
+
+            flag_OperationBtnCal = 0;
+            //flag_operator2ndtime = 0;
         }
 
         private void Calculation()
@@ -188,11 +273,10 @@ namespace Calculator
             }
 
             txt_InputOutput.Text = result.ToString();
-        }
 
-        private void btn_For_Result_Click(object sender, EventArgs e)
-        {
-           Calculation();  
+            resetOperandValue();
         }
+        /* ---------- Common Function (end) ---------- */
+
     }
 }
