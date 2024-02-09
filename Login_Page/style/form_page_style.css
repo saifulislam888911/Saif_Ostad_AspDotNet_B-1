@@ -1,0 +1,131 @@
+
+/* ------------------------------------------------------------      
+            1st Section : login-panel
+------------------------------------------------------------ */
+
+.login-panel{
+    display: flex;
+
+    justify-content: center;
+}
+
+
+
+/* .......... login-form start .......... */
+
+.login-form{
+    display: flex;
+
+    flex-direction: column;
+
+    border:2px solid #9e2bc146;
+    border-radius: 10px;
+
+    padding: 40px 50px;
+}
+.login-form h2{
+    font-family: 'Poppins', sans-serif;
+
+    color:#3A3A3A;
+
+    text-align: center; 
+
+    margin: 0px 0px 15px 0px;
+}
+.login-form input{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+
+    color:#3A3A3A;
+
+    border: 1px solid rgba(172, 255, 47, 0.596);
+    border-radius: 5px;
+
+    padding-left: 10px;
+    margin-top: 15px;
+}
+.login-form button{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+
+    color: whitesmoke;
+
+    background-image: linear-gradient(#E1A2B8,#9F2BC1);
+    border: 0px;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    padding: 5px;
+    margin-top: 30px;
+}
+
+/* __________ login-form end __________ */
+
+
+
+
+/* ------------------------------------------------------------      
+            1st Section : signup-panel
+------------------------------------------------------------ */
+
+.signup-panel{
+    display: flex;
+
+    justify-content: center;
+}
+
+
+
+/* .......... signup-form start .......... */
+
+.signup-form{
+    display: flex;
+
+    flex-direction: column;
+
+    border:2px solid #9e2bc146;
+    border-radius: 10px;
+
+    padding: 40px 50px;
+}
+.signup-form h2{
+    font-family: 'Poppins', sans-serif;
+
+    color:#3A3A3A;
+
+    text-align: center; 
+
+    margin: 0px 0px 15px 0px;
+}
+.signup-form input{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+
+    color:#3A3A3A;
+
+    border: 1px solid rgba(172, 255, 47, 0.596);
+    border-radius: 5px;
+
+    padding-left: 10px;
+    margin-top: 15px;
+}
+.signup-form button{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+
+    color: whitesmoke;
+
+    background-image: linear-gradient(#E1A2B8,#9F2BC1);
+    border: 0px;
+    border-radius: 10px;
+
+    cursor: pointer;
+    
+    padding: 5px;
+    margin-top: 30px;
+}
+
+/* __________ signup-form end __________ */
