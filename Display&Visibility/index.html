@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username">
+            <input type="email" id="email" placeholder="Email" style="display: none;">
+            <input type="password" id="password" placeholder="Password">
+            
+            <button type="submit" id="login-button">Login</button>
+            <button type="button" id="new-user-button">New User</button>
+        </form>
+    </div>
+
+    <script>
+    document.getElementById('new-user-button').addEventListener('click', function() {
+        var emailField = document.getElementById('email');
+        emailField.style.display = (emailField.style.display === 'none') ? 'block' : 'none';
+
+        var loginButton = document.getElementById('login-button');
+        loginButton.style.visibility = (loginButton.style.visibility === 'hidden') ? 'visible' : 'hidden';
+    });
+    </script>
+</body>
+</html>
