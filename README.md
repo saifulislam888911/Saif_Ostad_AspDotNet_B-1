@@ -4,7 +4,7 @@ This repo is being used for Class-Works & Assignments (From Ostad) .
 
 # Assignment-2
 # Project : Login_Page
-Website Link : https://saifulislam888911.github.io/Saif_Ostad_AspDotNet_B-1/Login_Page/
+Summary : HTML5, CSS3, Javascript, Javascript-validation
 
 
 Check Branches for Class-Works and Assignments .
