@@ -9,18 +9,45 @@
 </head>
 
 <body>
-    <div id="container">
-        <div id="top-bar">
-            <h3>Bazar Online</h3>
-        </div>
-        <div id="left-bar">
-            <ul>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Products</a></li>
-            </ul>
-        </div>
-        <div id="content">
-            <p>Welcome to the dashboard!</p>
+    <div>
+        <nav class="top-bar">
+            <logo>
+                <h3><a href="#">Bazar Online</a></h3>
+            </logo>
+
+            <div>
+                <a href="#">Home</a>
+                <a href="#" class="active">Dashboard</a>
+            </div>
+
+            <div>
+                <a href="#">Cart</a>
+                <a href="#">Logout</a>
+            </div>
+        </nav>
+
+        <div  class="container">
+            <div class="left-bar">
+                <ul>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="#">Orders</a></li>
+                    <li><a href="#">My Wishlist</a></li>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </div>
+    
+            <div class="content">
+                <searchbar>
+                    <input type="text" name="searchbar" id="searchbar" class="search-bar" placeholder="Search...">
+                </searchbar>
+    
+                <div>
+                    <h4>Welcome to the dashboard!</h4>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam non officiis beatae obcaecati assumenda, delectus sunt sed. Molestiae quae officia obcaecati debitis molestias dignissimos porro beatae reiciendis nobis itaque, odio eius ad totam expedita consequatur? Eum in itaque rem culpa deserunt quo asperiores alias explicabo sint maiores incidunt saepe harum delectus aut rerum animi vero fugiat, perferendis pariatur nobis ipsam similique? Reprehenderit incidunt quis eos, aspernatur doloribus placeat. Nostrum temporibus similique, ullam sequi, ipsum architecto odio praesentium incidunt dolor illum doloremque animi ad optio cumque deleniti quas maiores atque quibusdam enim culpa adipisci voluptatem, minima voluptatum modi? In, perferendis beatae.</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>

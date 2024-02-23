@@ -1,40 +1,119 @@
-body {
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-}
-#container {
-    display: flex;
-    flex-direction: column;
-    height: 1000px;
-}
-#top-bar {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-}
-#left-bar {
-    background-color: #555;
-    color: #fff;
-    padding: 10px;
-    width: 200px;
-    flex-shrink: 0;
-}
-#content {
-    flex-grow: 1;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#left-bar ul {
-    list-style: none;
-    padding: 0;
+body {
+    font-family: Arial, sans-serif;
 }
-#left-bar ul li {
+
+.container {
+    display: flex;
+}
+
+
+
+.top-bar {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+
+    background-color: rgba(255, 68, 0, 0.788);
+    color: white;
+
+    margin: 0 0 1px 0;
+    padding: 20px;
+}
+.top-bar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0px 10px;
+}
+.top-bar a.active ,
+.top-bar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+
+    /* font-weight: bold; */
+    color: black;
+
+    /* width: 120px;
+    height: 40px; */
+}
+.top-bar logo {
+    flex-grow: 1;
+}
+
+
+
+.left-bar {
+    background-color: rgba(194, 184, 184, 0.288);
+    /* border: 1px solid rgba(201, 130, 105, 0.623); */
+    border-radius: 0 0 20px 0;
+
+    color: white;
+
+    height: 500px;
+    width: 20%;
+    padding: 10px;
+}
+.left-bar ul {
+    list-style: none;
+}
+.left-bar ul li {
     margin-bottom: 10px;
 }
-#left-bar ul li a {
-    color: #fff;
+.left-bar ul li a {
+    display: block;
+
+    border-radius: 10px;
+    
+    color: orangered;
     text-decoration: none;
+
+    padding: 8px 15px;
 }
-#left-bar ul li a:hover {
-    text-decoration: underline;
+.left-bar ul li a.active{
+    background-color: rgba(245, 204, 189, 0.747);
+
+    color: black;
+    /* text-decoration: underline; */
+}
+.left-bar ul li a:hover {
+    background-color: rgba(245, 204, 189, 0.747);
+
+    color: black;
+}
+
+.content {
+    /* flex-grow:1; */
+    width: 60%;
+    padding: 20px;
+}
+.content h4 {
+    font-size: 24px;
+    margin: 70px 0 10px 0;
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+    text-align: justify;
+}
+
+.search-bar{  
+    display: block;
+
+    border: 1px solid #ccc;
+    border-radius: 20px;
+
+    text-align: center;
+
+    height: 40px;
+    width: 60%;
+    padding: 0 15px;
+    margin: 10px auto; 
 }
