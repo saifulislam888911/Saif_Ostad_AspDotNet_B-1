@@ -1,16 +1,1 @@
-# Saif_Ostad_AspDotNet_B-1
-This repo is being used for Class-Works and Assignments and Live-Tests (From Ostad) .
 
-
-# Live-Test-2 : 
-(Live Test On Week : 3) 
-
-# Topic : 
-Summary : 
-
-Question :  
-create a jquery get function and call this API  https://dummyjson.com/products  and show the result in html
-
-
-Check Branches for Class-Works and Assignments and Live-Tests .
-(example : Live-Test-0 ; Live-Test-1 ; Live-Test-2 ;)
