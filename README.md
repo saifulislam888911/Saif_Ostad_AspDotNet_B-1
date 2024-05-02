@@ -2,13 +2,14 @@
 This repo is being used for Class-Works and Assignments and Live-Tests (From Ostad) .
 
 
-# Live-Test-0 : 
-(Live Test On Week : ) 
+# Live-Test-2 : 
+(Live Test On Week : 3) 
 
 # Topic : 
 Summary : 
 
-Question : 
+Question :  
+create a jquery get function and call this API  https://dummyjson.com/products  and show the result in html
 
 
 Check Branches for Class-Works and Assignments and Live-Tests .
