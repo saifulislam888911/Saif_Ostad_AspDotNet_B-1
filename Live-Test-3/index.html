@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Live-Test-3</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $.get('https://dummyjson.com/products', function(data) {
+                var productsHtml = '';
+                $.each(data.products, function(index, product) {
+                    productsHtml += '<div class="card mb-3">';
+                    productsHtml += '<h5 class="card-title">' + product.title + '</h5>';
+                    productsHtml += '<p class="card-text">' + product.description + '</p>';
+                    productsHtml += '</div>';
+                });
+                $('#products').html(productsHtml);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Products : </h1>
+
+        <div id="products"></div>
+    </div>
+</body>
+</html>
