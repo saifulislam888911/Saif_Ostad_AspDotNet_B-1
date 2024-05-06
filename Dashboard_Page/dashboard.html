@@ -3,52 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
     
+    <title>Dashboard</title>
+
+
+
+    <!-- CSS : Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css"> -->
+    <!-- (For : Products) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+    <!-- CSS : Mine -->
     <link rel="stylesheet" href="style/dashboard_style.css">
 </head>
 
 <body>
-    <div>
+    <header>
         <nav class="top-bar">
             <logo>
                 <h3><a href="#">Bazar Online</a></h3>
             </logo>
 
             <div>
-                <a href="#">Home</a>
-                <a href="#" class="active">Dashboard</a>
+                <a href="home.html">Home</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
             </div>
 
             <div>
-                <a href="#">Cart</a>
+                <a href="cart.html">Cart</a>
                 <a href="#">Logout</a>
             </div>
         </nav>
+    </header>
 
-        <div  class="container">
-            <div class="left-bar">
-                <ul>
-                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
-                    <li><a href="#">Orders</a></li>
-                    <li><a href="#">My Wishlist</a></li>
-                    <li><a href="#">Account</a></li>
-                    <li><a href="#">Settings</a></li>
-                </ul>
+
+
+    <main class="container_mine">
+        <sidebar class="left-bar">    
+            <ul>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">My Wishlist</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </sidebar>
+
+
+
+        <section class="content_mine">
+            <searchbar>
+                <input type="text" name="searchbar" id="searchbar" class="search-bar" placeholder="Search...">
+            </searchbar>
+
+            <h4>Welcome to the dashboard!</h4>
+
+
+
+            <!-- Table : Products -->
+            <div>        
+                <table class="table mt-3" id="product-list">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+                <button id="add-product-btn" class="btn btn-primary">Add Product</button>
             </div>
-    
-            <div class="content">
-                <searchbar>
-                    <input type="text" name="searchbar" id="searchbar" class="search-bar" placeholder="Search...">
-                </searchbar>
-    
-                <div>
-                    <h4>Welcome to the dashboard!</h4>
 
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam non officiis beatae obcaecati assumenda, delectus sunt sed. Molestiae quae officia obcaecati debitis molestias dignissimos porro beatae reiciendis nobis itaque, odio eius ad totam expedita consequatur? Eum in itaque rem culpa deserunt quo asperiores alias explicabo sint maiores incidunt saepe harum delectus aut rerum animi vero fugiat, perferendis pariatur nobis ipsam similique? Reprehenderit incidunt quis eos, aspernatur doloribus placeat. Nostrum temporibus similique, ullam sequi, ipsum architecto odio praesentium incidunt dolor illum doloremque animi ad optio cumque deleniti quas maiores atque quibusdam enim culpa adipisci voluptatem, minima voluptatum modi? In, perferendis beatae.</p>
+
+
+            <!-- Product Modal -->
+            <div class="modal fade" id="product-modal" tabindex="-1" aria-labelledby="product-modal-label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="product-modal-label">Add Product</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+        
+                        <div class="modal-body">
+                            <input type="hidden" id="product-id">
+        
+                            <div class="mb-3">
+                                <label for="product-name" class="form-label">Product Name</label>
+                                <input type="text" class="form-control" id="product-name">
+                            </div>
+        
+                            <div class="mb-3">
+                                <label for="product-price" class="form-label">Price</label>
+                                <input type="number" class="form-control" id="product-price">
+                            </div>
+                        </div>
+        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" id="save-product-btn" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>      
+    </main>
+
+
+
+    <!-- Js : Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    
+    
+    <!-- Js : Mine -->
+    <script src="./js/products_table.js"></script>
 </body>
 </html>

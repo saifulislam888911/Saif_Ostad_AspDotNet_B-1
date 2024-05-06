@@ -1,0 +1,43 @@
+
+.checkout-panel{
+    font-family:cursive;
+    text-align: center;
+    background-color: rgba(248, 140, 140, 0.151);
+    border-radius: 40px;
+
+    padding: 5px;
+}
+
+.totalProductPrice{
+    font-weight: 600;
+    margin: 30px 0px;
+}
+
+.discount-coupon{
+    color: orangered;
+    font-size: larger;
+    padding: 2px; 
+    margin: 30px 0px;
+}
+.discount-coupon-code{
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.alignment-btn{
+    text-align: center;
+}
+
+.btn-apply{
+    color: white;
+    background-color: orangered;
+    border-radius: 50%;
+    padding: 20px 50px;
+    margin: 10px 0px 20px 0px;
+}
+
+.finalAmountToPay{
+    color: green;
+    font-weight: 600;
+    margin: 30px 5px;
+}

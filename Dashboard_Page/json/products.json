@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Laptop",
+        "price": 2000,
+        "image": "https://cdn.storifyme.xyz/accounts/cashify-in-0561312/assets/f-best-laptop-in-india-e18oj-58711706026756482.webp?t=1706061649000"
+    },
+    {
+        "id": 2,
+        "name": "Smartphone",
+        "price": 1099,
+        "image": "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-max-1.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Headphones",
+        "price": 590,
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-max-select-spacegray-202011_FV1_FMT_WHH?wid=940&hei=800&fmt=jpeg&qlt=90&.v=1604776025000"
+    }
+]

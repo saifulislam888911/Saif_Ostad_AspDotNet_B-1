@@ -8,8 +8,9 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.container {
+.container_mine {
     display: flex;
+    /* background-color: #666;     */
 }
 
 
@@ -55,7 +56,8 @@ body {
 
     color: white;
 
-    height: 500px;
+    /* height: 500px; */
+    height: auto;
     width: 20%;
     padding: 10px;
 }
@@ -87,17 +89,22 @@ body {
     color: black;
 }
 
-.content {
+.content_mine {
     /* flex-grow:1; */
-    width: 60%;
+    border: 1px solid rgba(238, 196, 196, 0.486);
+    border-radius: 0 0 20px 20px;
+
+    width: 80%;
+    margin: 0 auto 0 auto;
     padding: 20px;
 }
-.content h4 {
+.content_mine h4 {
     font-size: 24px;
-    margin: 70px 0 10px 0;
+    text-align: center;
+    margin: 50px;
 }
 
-.content p {
+.content_mine p {
     font-size: 16px;
     line-height: 1.5;
     color: #666;
@@ -116,4 +123,47 @@ body {
     width: 60%;
     padding: 0 15px;
     margin: 10px auto; 
+}
+
+
+
+/*.................... 
+    for responsiveness 
+....................*/
+
+/* For screens smaller than 768px (typical tablets) */
+@media (max-width: 768px) {
+    .container_mine {
+        flex-direction: column;
+    }
+
+    .left-bar {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .content_mine {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .search-bar {
+        width: 80%;
+    }
+}
+
+/* For screens smaller than 576px (typical phones) */
+@media (max-width: 576px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .top-bar div {
+        margin-top: 10px;
+    }
+
+    .left-bar {
+        height: auto;
+    }
 }
