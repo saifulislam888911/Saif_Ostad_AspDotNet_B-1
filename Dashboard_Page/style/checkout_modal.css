@@ -13,6 +13,11 @@
     margin: 30px 0px;
 }
 
+.shippingAddressTextArea{
+    border-radius: 20px;
+    height: 80px;
+}
+
 .discount-coupon{
     color: orangered;
     font-size: larger;
@@ -40,4 +45,21 @@
     color: green;
     font-weight: 600;
     margin: 30px 5px;
+}
+
+
+
+/*.................... 
+    for responsiveness 
+....................*/
+
+@media (max-width: 768px) {
+.shippingAddressTextArea {
+    width: 350px;
+    height: 60px; /* Decrease text area height */
+}
+
+.btn-apply {
+    padding: 15px 30px; /* Decrease button padding */
+}
 }

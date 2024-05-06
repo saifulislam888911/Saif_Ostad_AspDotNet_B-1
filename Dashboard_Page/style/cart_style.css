@@ -80,7 +80,22 @@
 ....................*/
 
 @media (max-width: 768px) {
+    .cart-header {
+        width: 50%; 
+        font-size: 14px; /
+    }
+
     .cart-content {
-        padding: 10px;
+        width: 90%; 
+        padding: 10px; 
+    }
+
+    .cart-item img {
+        width: 80px; 
+        height: 80px;
+    }
+
+    .cart-item-actions button {
+        padding: 3px 8px; 
     }
 }
